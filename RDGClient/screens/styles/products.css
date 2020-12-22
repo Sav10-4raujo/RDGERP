@@ -1,0 +1,225 @@
+#controltable {
+
+  border: 1px solid rgb(246, 235, 8);
+  width: 90%;
+  height: 550px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+
+
+}
+
+.btnpage {
+
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  background-size: 40px 30px;
+
+}
+
+
+#left {       
+
+  background-image: url('../assets/left.png');
+  margin-right: 5px;
+  border-radius: 1000px;
+  border: 1px solid rgba(0, 0, 0, 0.500);
+  
+
+}
+
+#right {
+
+  background-image: url('../assets/right.png');
+  margin-left: 5px;
+  border-radius: 1000px;
+  border: 1px solid rgba(0, 0, 0, 0.500);
+
+
+}
+
+#add{
+
+  background-image: url('../assets/add.png');
+  margin-right: 10px;
+  border-radius: 2000px;
+  border: 1px solid rgba(0, 0, 0, 0.500);
+  border-radius: 1000px;
+
+  
+
+
+
+}
+
+
+#delete{
+
+  background-image: url('../assets/delete.png');
+  margin-right: 10px;
+  display: inline-block;
+  width: 25px;
+  height: 15px;
+  background-size: 25px 15px;
+  padding: 0;
+  cursor: pointer;
+  
+}
+
+#update{
+
+  background-image: url('../assets/refresh.png');
+  margin-left: 10px;
+  display: inline-block;
+  width: 25px;
+  height: 15px;
+  background-size: 25px 15px;
+  padding: 0;
+  cursor: pointer;
+  
+}
+
+#saleInfo{
+
+  background-image: url('../assets/info.png');
+  margin-left: 10px;
+  display: inline-block;
+  width: 25px;
+  height: 15px;
+  background-size: 25px 15px;
+  padding: 0;
+  cursor: pointer;
+
+
+}
+
+
+#searchbtn{
+
+  color:#fff;
+  border: 1px solid rgb(246, 235, 8);
+  font-weight: bolder;
+  background-color:  rgb(246, 235, 8) ;
+  height: 30px;
+  width: 40px;
+  background-image: url('../assets/search.png');
+  background-size: 25px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 1000px;
+  border: 1px solid rgba(0, 0, 0, 0.500);
+  cursor: pointer;
+
+}
+
+#searchinput{
+
+  margin-right: auto;
+  margin-left: auto;
+  height: 30px;
+
+
+}
+
+#navpage{
+
+  border: 1px solid rgb(246, 235, 8);
+  height: 40px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+
+
+}
+
+.itemcontrol {
+
+  text-align: center;
+
+}
+
+#register {
+
+  color:#fff;
+  border: 1px solid rgb(246, 235, 8);
+  font-weight: bolder;
+  background-color:  rgb(246, 235, 8) ;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid rgba(0, 0, 0, 0.500);
+
+
+}
+
+#register:hover{
+  background-color: rgb(216, 212, 1);
+}
+
+.input-group-text{
+
+  width: 100px;
+  text-align: center;
+
+}
+
+#exampleModalLabel{
+
+  text-align: center;
+
+}
+
+#load{
+  background-color: rgba(0, 0, 0, 0.200);
+  width: 100%;
+  height: 100%;
+  background-position:center ;
+
+
+}
+#loadgif{
+
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/load.gif');
+  background-size: 80px 70px;
+  background-repeat: no-repeat;
+  background-position:center center;
+
+
+}
+
+#paymentTitle{
+
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+
+}
+
+#payment {
+
+  margin-left: 5px;
+
+}
+
+#reloadbtn{
+
+  color:#fff;
+  border: 1px solid rgb(246, 235, 8);
+  font-weight: bolder;
+  background-color:  rgb(246, 235, 8) ;
+  height: 30px;
+  width: 40px;
+  margin-left: 10px;
+  background-image: url('../assets/reload.png');
+  background-size: 25px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 1000px;
+  border: 1px solid rgba(0, 0, 0, 0.500);
+  cursor: pointer;
+
+}

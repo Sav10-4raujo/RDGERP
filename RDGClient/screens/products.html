@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/products.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/general.css">
+    
+    <title>Recanto dos Grãos</title>
+  </head>
+  <body onload="getProducts()">
+<div class="modal fade" id="registermodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Atualização de preço</h5>
+        <button type="button" onclick="closeModal()" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Produto</span>
+          </div>
+          <input type="text" disabled class="form-control" id="productinput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Preço (R$)</span>
+          </div>
+          <input type="number"  id="priceinput" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"  id="inputGroup-sizing-default">Estoque</span>
+          </div>
+          <input type="number" disabled id="stockinput" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Medida</span>
+          </div>
+          <select type="text" disabled class="form-control" id="stocktypeinput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <option value="kg">Kg</option>
+            <option value="unity">Unidade</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Validade</span>
+          </div>
+          <input type="date" disabled class="form-control" id="shelflifeinput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="closeModal()" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <div id="getid">
+        <button type="button" id="register" class="btn btn-primary">Registrar</button>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modalalert" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="alerttitle" class="modal-title">Aviso</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="alertbody" class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <header class="navbar navbar-light bg-light" id="header">
+      <span class="navbar-brand mb-0" id="title">
+        <div onclick="goToIndex()" id="logoimage">
+           <img src="assets/logo.png" alt="logo RDG" width=115 height=95>
+        </div>
+      </span>
+    </header>
+    <div id="controltable">
+  <nav class="navbar navbar-light bg-light">
+  <div class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisa" id="searchinput" aria-label="Search">
+    <button  id="searchbtn" onclick="search()"></button>
+    <button  id="reloadbtn" onclick="reload()"></button>
+  </div>
+  <div id="pagetitle">
+    Lista de Produtos
+  </div>
+  <div id="arrows">
+    <a href="#" onclick="left()">
+      <div id="left" class="btnpage">
+      </div>
+    </a>
+    <a href="#" onclick="right()">
+      <div id="right" class="btnpage">
+      </div>
+    </a>
+  </div>
+</nav>
+    <table class="table" id="productstable">
+      <thead>
+        <tr>
+          <th scope="col"><div class="itemcontrol">Produto</div></th>
+          <th scope="col"><div class="itemcontrol">Preço</div></th>
+          <th scope="col"><div class="itemcontrol">Estoque</div></th>
+          <th scope="col"><div class="itemcontrol">Validade</div></th>
+          <th scope="col"><div class="itemcontrol">Cód Produto</div></th>
+          <th scope="col"><div class="itemcontrol">Ações</div></th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+    <footer class="navbar navbar-light bg-light" id="footer">
+      <span class="navbar-brand mb-0" id="title">
+
+        <div id="footertext">
+          <h6>Software Factory - 2020 ©</h6>
+        </div>
+      </span>
+    </footer>
+    <script src="./scripts/products.js"></script>
+  </body>
+</html>

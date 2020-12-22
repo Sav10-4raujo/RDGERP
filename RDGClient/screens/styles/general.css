@@ -1,0 +1,66 @@
+#header{
+
+  border-radius: 3%;
+  border: 2px solid rgb(246, 235, 8);
+  height: 80px;
+
+}
+#footer {
+
+  border-radius: 3%;
+  border: 2px solid rgb(246, 235, 8);
+  height: 50px;
+  bottom: 0;
+  position:absolute;
+  left: 0;
+  width: 100%;
+
+}
+
+#title {
+
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  text-align: center;
+  width: 60;
+  height: 40;
+
+
+}
+
+#saudation {
+
+  position: absolute;
+  margin-top: 25px;
+  font-size: 13pt;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+#footertext{
+
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+#logoimage {
+  margin-top: -22px;
+  cursor: pointer;
+}
+
+#pagetitle {
+  margin-left: -100px;
+  font-size: 17pt;
+  font-family: 'Bebas Neue', cursive;
+
+}
+
+.btnpage {
+
+  cursor: pointer;
+
+}

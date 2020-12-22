@@ -1,0 +1,49 @@
+#menu{
+
+  border: rgba(0, 0, 0, 0.3) 1px solid;
+  width: 35%;
+  height: 330px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  text-align: center;
+  background-color: rgb(248, 249, 250);
+
+}
+
+#user{
+
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#password{
+
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.loginTitle{
+
+  font-size: 17px;
+  margin-top: 25px ;
+
+}
+
+h5{
+
+  margin-top: 15px;
+  margin-bottom: 35px;
+
+}
+
+#sendLogin{
+
+  margin-top: 25px;
+  width: 150px;
+
+}
